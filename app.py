@@ -39,6 +39,29 @@ with tab1:
                 help="Đơn thuộc các case bị 5 rule gắn cờ (cặp + tài xế + khách hàng, đã khử trùng) "
                      "— chiếm 0,90% tổng số đơn")
 
+    st.markdown("")
+    st.subheader("Giá trị rủi ro theo từng loại hành vi")
+
+    m1, m2, m3 = st.columns(3)
+    m1.metric("Collusion", "6,31 tỷ đ",
+              help="Tổng GMV của 1.244 cặp nghi thông đồng — giá trị giao dịch đáng ngờ")
+    m2.metric("Behavior 2", "2,08 tỷ đ",
+              help="Tổng tiền khuyến mãi đã chi cho 6.613 cặp bị gắn cờ")
+    m3.metric("Story 8.3", "445 triệu đ",
+              help="Tổng tiền khuyến mãi của 455 khách hàng lạm dụng")
+
+    m4, m5, _ = st.columns(3)
+    m4.metric("Behavior 1", "70 triệu đ",
+              help="Tiền khuyến mãi trên các chuyến nghi là đơn ảo")
+    m5.metric("Story 8.4", "2,4 triệu đ",
+              help="Tiền cước thu thêm từ đi vòng — chỉ tính 63 tài xế đã xác nhận có lợi ích tài chính")
+
+    st.caption(
+        "⚠️ **5 con số này đo 5 loại giá trị khác nhau** (tổng GMV giao dịch vs tiền khuyến mãi "
+        "vs tiền cước thu thêm) — **không cộng gộp lại thành một tổng chung**."
+    )
+
+    st.markdown("")
     st.subheader("Chi tiết theo từng loại hành vi")
     breakdown = pd.DataFrame({
         "Loại": ["Behavior 1 (arbitrage_promo)", "Behavior 2 (internal_exploit)",
@@ -302,6 +325,39 @@ with tab3:
         f"đủ 3 lớp bằng chứng độc lập chỉ còn **{t3} tài xế** — loại bỏ **{(1-t3/t1)*100:.0f}%** trường hợp "
         "không đủ cơ sở. Đây là minh chứng hệ thống **không kết luận vội từ 1 tín hiệu đơn lẻ**."
     )
+    st.info(
+        "💡 Kiểm chứng bằng tiền: tính trên cả 203 tài xế, tổng tiền thu thêm từ đi vòng là **âm 22,4 triệu đ** "
+        "(đa số thực ra lỗ xăng vì cước chốt theo quãng đường khai báo). Chỉ 63 tài xế qua tầng xác nhận "
+        "tài chính mới thực sự thu thêm (**+2,4 triệu đ**) — nếu bỏ tầng lọc này, hệ thống sẽ báo động nhầm "
+        "140 tài xế không hề trục lợi."
+    )
+
+    st.divider()
+
+    # ==================================================================
+    # D. PHAN BO DIEM MODEL
+    # ==================================================================
+    st.subheader("📊 Phân bố điểm bất thường — case bị rule flag vs toàn quần thể")
+
+    bins = [i / 20 for i in range(21)]
+    nhan = [f"{int(b*100)}-{int(b*100+5)}%" for b in bins[:-1]]
+
+    toan_bo = pd.cut(pair["if_score_percentile"], bins=bins, labels=nhan).value_counts().sort_index()
+    bi_flag = pd.cut(pair.loc[pair["n_rules_flagged"] > 0, "if_score_percentile"],
+                     bins=bins, labels=nhan).value_counts().sort_index()
+
+    phan_bo = pd.DataFrame({
+        "Toàn quần thể (%)": toan_bo / toan_bo.sum() * 100,
+        "Case bị rule flag (%)": bi_flag / bi_flag.sum() * 100,
+    })
+    st.bar_chart(phan_bo)
+    st.markdown(
+        f"**Kết luận:** toàn quần thể phân bố đều (mỗi khoảng ~5%), nhưng "
+        f"**{bi_flag.iloc[0]/bi_flag.sum()*100:.0f}% case bị rule flag dồn vào khoảng bất thường nhất (0-5%)** — "
+        "model độc lập xếp đúng những case rule đã bắt lên đầu, dù chưa từng được cho biết rule là gì."
+    )
+    st.caption("Trục ngang: percentile điểm Isolation Forest (0% = bất thường nhất). "
+               "Trục dọc: % số case trong mỗi nhóm.")
 
 # ========================================================================
 # TAB 4: CASE MỚI (model tìm ra, rule chưa từng flag)
