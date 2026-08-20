@@ -30,33 +30,26 @@ with tab1:
     st.subheader("Bức tranh tổng quan")
 
     n_total_orders = 15_699_432
-    n_flagged_pair = int(pair["n_rules_flagged"].gt(0).sum())
-    n_flagged_driver = int(driver["story84_flagged"].sum())
-    n_flagged_customer = int(customer["story83_flagged"].sum())
-    n_flagged_total = n_flagged_pair + n_flagged_driver + n_flagged_customer
 
     col1, col2, col3 = st.columns(3)
-    col1.metric("Tổng đơn hàng đã phân tích", f"{n_total_orders:,}")
+    col1.metric("Tổng đơn hàng đã phân tích", f"{n_total_orders:,}".replace(",", "."))
     col2.metric("Case bị gắn cờ nghi vấn", "9.493",
                 help="Tổng số case bị 5 rule gắn cờ (978 + 6.613 + 1.244 + 455 + 203)")
-    col3.metric("Đơn hàng liên quan", "86.462",
-                help="Số đơn thuộc các case bị gắn cờ — chiếm 0,55% tổng số đơn")
-
+    col3.metric("Đơn hàng liên quan", "99.969",
+                help="Đơn thuộc các case bị gắn cờ (cặp + tài xế + khách hàng, đã khử trùng) "
+                     "— chiếm 0,64% tổng số đơn")
 
     st.subheader("Chi tiết theo từng loại hành vi")
     breakdown = pd.DataFrame({
         "Loại": ["Behavior 1 (arbitrage_promo)", "Behavior 2 (internal_exploit)",
                  "Collusion (ghost/tạo đơn nhanh)", "Story 8.3 (khách lạm dụng KM)",
                  "Story 8.4 (tài xế đi vòng)"],
-        "Số case": [
-            int(pair["b1_flagged"].sum()) if "b1_flagged" in pair.columns else 0,
-            int(pair["b2_flagged"].sum()) if "b2_flagged" in pair.columns else 0,
-            int(pair["collusion_flagged"].sum()) if "collusion_flagged" in pair.columns else 0,
-            n_flagged_customer,
-            n_flagged_driver,
-        ]
+        "Số case": [978, 6613, 1244, 455, 203],
     })
     st.bar_chart(breakdown.set_index("Loại"))
+    st.caption("Collusion và Story 8.4 còn có tầng lọc chặt hơn: **107** và **63** case đạt mức "
+               "'bằng chứng cao' sau khi qua đủ các lớp kiểm chứng độc lập.")
+
 
 # ========================================================================
 # TAB 2: TRA CỨU CASE (phần demo chính)
