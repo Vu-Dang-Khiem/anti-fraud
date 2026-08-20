@@ -230,7 +230,6 @@ with tab3:
             "**không có ngày nào đột biến**. Đây là mức nền ổn định, cho thấy gian lận diễn ra "
             "liên tục chứ không phải sự cố nhất thời."
         )
-    st.caption("Khoảng trống 18/07–23/07 là do cấu trúc dữ liệu (2 đợt lấy mẫu), không phải ngày không có đơn.")
 
     st.markdown("")
     st.subheader("📅 Số case bị gắn cờ theo ngày, tách theo từng rule")
