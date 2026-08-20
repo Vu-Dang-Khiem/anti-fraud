@@ -264,7 +264,7 @@ with tab3:
         )
 
     st.markdown("")
-    st.subheader("📅 Số case bị gắn cờ theo ngày, tách theo từng rule")
+    st.subheader("📅 Số đơn bị gắn cờ theo ngày, tách theo từng rule")
     dbr = daily_by_rule.set_index("order_date")
     st.line_chart(dbr)
 
