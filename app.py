@@ -20,7 +20,7 @@ st.title("🚨 Radar Gian Lận — Ride Trip")
 st.caption("Hệ thống phát hiện gian lận: 5 rule + 3 model (Isolation Forest, VAE, LOF)")
 
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📉 Tổng quan", "🔍 Điều tra case", "📈 Dashboard", "✅ Vì sao tin được"
+    "📉 Tổng quan", "🔍 Điều tra case", "📈 Dashboard", "✅ Lý do"
 ])
 
 # ========================================================================
@@ -294,7 +294,7 @@ with tab3:
 # TAB 4: CASE MỚI (model tìm ra, rule chưa từng flag)
 # ========================================================================
 with tab4:
-    st.markdown("## Lý do?")
+    st.markdown("## Vì sao có thể tin vào kết quả này?")
     st.caption("Dự án chưa có nhãn gian lận thật — nên mọi kết luận đều được kiểm chứng bằng "
                "nhiều kỹ thuật độc lập, không dựa vào một nguồn duy nhất.")
 
