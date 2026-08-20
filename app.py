@@ -71,17 +71,20 @@ with tab2:
         base, ev, id_cols = pair, ev_pair, ["driver_id", "customer_id"]
         col_flag, ten_rule = "n_rules_flagged", "Behavior 1 / 2 / Collusion"
         sort_don = (["so_bang_chung", "ty_le_km", "gap_min"], [False, True, True])
-        cot_bang = ["n_rules_flagged", "n_trips", "so_don_bang_chung", "if_score_percentile"]
+        cot_bang = ["n_rules_flagged", "n_trips", "so_don_bang_chung",
+                    "if_score_percentile", "vae_rank_pct", "lof_score_percentile"]
     elif cap_do.startswith("🚗"):
         base, ev, id_cols = driver, ev_drv, ["driver_id"]
         col_flag, ten_rule = "story84_flagged", "Story 8.4"
         sort_don = (["so_bang_chung", "km_ratio"], [False, False])
-        cot_bang = ["n_orders", "pct_high", "so_don_bang_chung", "if_score_percentile"]
+        cot_bang = ["n_orders", "pct_high", "so_don_bang_chung",
+                    "if_score_percentile", "vae_rank_pct", "lof_score_percentile"]
     else:
         base, ev, id_cols = customer, ev_cus, ["customer_id"]
         col_flag, ten_rule = "story83_flagged", "Story 8.3"
         sort_don = (["so_bang_chung", "discount_ratio"], [False, False])
-        cot_bang = ["n_orders", "total_discount", "promo_rate", "so_don_bang_chung", "if_score_percentile"]
+        cot_bang = ["n_orders", "total_discount", "promo_rate", "so_don_bang_chung",
+                    "if_score_percentile", "vae_rank_pct", "lof_score_percentile"]
 
     # ===== Gan tom tat bang chung vao bang thuc the =====
     @st.cache_data
