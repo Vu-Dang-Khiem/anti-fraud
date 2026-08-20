@@ -294,7 +294,7 @@ with tab3:
 # TAB 4: CASE MỚI (model tìm ra, rule chưa từng flag)
 # ========================================================================
 with tab4:
-    st.markdown("## Vì sao có thể tin vào kết quả này?")
+    st.markdown("## Lý do?")
     st.caption("Dự án chưa có nhãn gian lận thật — nên mọi kết luận đều được kiểm chứng bằng "
                "nhiều kỹ thuật độc lập, không dựa vào một nguồn duy nhất.")
 
