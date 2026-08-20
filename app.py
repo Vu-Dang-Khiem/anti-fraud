@@ -16,7 +16,7 @@ def load_data():
 
 pair, driver, customer, lift_vertical, lift_province = load_data()
 
-st.title("🚨 Radar Gian Lận — Ride Trip")
+st.title("Anti-Fraud - Ride Trip")
 st.caption("Hệ thống phát hiện gian lận: 5 rule + 3 model (Isolation Forest, VAE, LOF)")
 
 tab1, tab2, tab3, tab4 = st.tabs([
