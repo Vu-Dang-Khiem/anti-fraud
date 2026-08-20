@@ -130,7 +130,13 @@ with tab2:
                 for ten, cot in [("Isolation Forest","if_score_percentile"),
                                  ("VAE","vae_rank_pct"), ("LOF","lof_score_percentile")]:
                     if cot in row.index and pd.notna(row[cot]):
-                        st.progress(float(1 - row[cot]), text=f"{ten} — top {row[cot]*100:.2f}%")
+                        hang = int(row[cot] * len(base)) + 1
+                        st.progress(
+                            float(1 - row[cot]),
+                            text=f"{ten} — hạng {hang:,}/{len(base):,} (top {row[cot]*100:.3f}%)"
+                                 .replace(",", ".")
+                        )
+
             if len(don):
                 n_bc = int((don["so_bang_chung"] > 0).sum())
                 st.markdown(f"**Truy vết cấp đơn:** {n_bc}/{len(don)} đơn có bằng chứng "
