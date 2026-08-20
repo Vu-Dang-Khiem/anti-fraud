@@ -1,0 +1,7 @@
+﻿rule,nhom,ty_le_pct
+Behavior 1,Nhom bi flag,78.4
+Behavior 1,Baseline ngau nhien,33.2
+Behavior 2,Nhom bi flag,73.2
+Behavior 2,Baseline ngau nhien,33.2
+Collusion,Nhom bi flag,69.3
+Collusion,Baseline ngau nhien,33.2

@@ -1,0 +1,66 @@
+khu_vuc,baseline_pct,flagged_pct,lift
+Tỉnh Quảng Ngãi,0.395,4.342,10.99
+Tỉnh Ninh Thuận,0.113,0.961,8.5
+Tỉnh Tây Ninh,0.501,4.038,8.06
+Tỉnh Hậu Giang,0.033,0.25,7.58
+Tỉnh Trà Vinh,0.116,0.859,7.41
+Tỉnh Nam Định,0.38,2.705,7.12
+Tỉnh Bình Phước,0.401,2.789,6.96
+Tỉnh Bến Tre,0.127,0.827,6.51
+Tỉnh Long An,0.682,3.698,5.42
+Tỉnh Thái Bình,0.405,1.861,4.6
+Tỉnh Đồng Nai,1.979,8.987,4.54
+Tỉnh Quảng Nam,0.477,2.12,4.44
+Tỉnh Phú Yên,0.38,1.351,3.56
+Tỉnh Thanh Hóa,1.197,4.02,3.36
+Tỉnh Ninh Bình,0.442,1.47,3.33
+Tỉnh Quảng Trị,0.284,0.911,3.21
+Tỉnh Tiền Giang,0.31,0.968,3.12
+Tỉnh Bà Rịa - Vũng Tàu,1.979,5.966,3.01
+Tỉnh Kiên Giang,0.611,1.696,2.78
+Tỉnh Hải Dương,0.477,1.095,2.3
+Tỉnh Hà Nam,0.381,0.852,2.24
+Tỉnh Thừa Thiên Huế,1.287,2.745,2.13
+Tỉnh Quảng Bình,0.448,0.953,2.13
+Tỉnh Khánh Hòa,2.011,3.949,1.96
+Tỉnh Bình Dương,2.339,4.101,1.75
+Thành phố Cần Thơ,0.938,1.641,1.75
+Tỉnh Kon Tum,0.164,0.281,1.71
+Tỉnh Lào Cai,0.483,0.783,1.62
+Tỉnh Vĩnh Phúc,0.427,0.634,1.48
+Tỉnh Thái Nguyên,1.061,1.456,1.37
+Tỉnh Hưng Yên,0.814,1.047,1.29
+Tỉnh Hòa Bình,0.291,0.312,1.07
+Tỉnh Bắc Ninh,1.507,1.58,1.05
+Tỉnh Hà Giang,0.156,0.138,0.88
+Tỉnh Gia Lai,0.659,0.569,0.86
+Tỉnh Đồng Tháp,0.148,0.125,0.84
+Champasak,0.04,0.029,0.72
+Tỉnh Bình Thuận,0.096,0.062,0.65
+Tỉnh Quảng Ninh,2.899,1.759,0.61
+Thành phố Đà Nẵng,5.522,2.908,0.53
+Thành phố Hà Nội,25.274,10.831,0.43
+Vientiane Capital,0.265,0.099,0.37
+Tỉnh Phú Thọ,0.324,0.117,0.36
+Thành phố Hải Phòng,0.585,0.192,0.33
+Savannakhet,0.036,0.012,0.33
+Thành phố Hồ Chí Minh,38.522,11.806,0.31
+Tỉnh Tuyên Quang,0.137,0.022,0.16
+Tỉnh Bắc Giang,0.191,0.03,0.16
+Tỉnh Lai Châu,0.01,0.001,0.1
+Tỉnh Nghệ An,0.287,0.024,0.08
+Tỉnh Đắk Lắk,0.166,0.013,0.08
+Tỉnh An Giang,0.027,0.002,0.07
+Tỉnh Yên Bái,0.048,0.002,0.04
+Tỉnh Cà Mau,0.032,0.001,0.03
+Tỉnh Hà Tĩnh,0.067,0.002,0.03
+Tỉnh Bạc Liêu,0.048,0.001,0.02
+Tỉnh Vĩnh Long,0.104,0.002,0.02
+Tỉnh Sóc Trăng,0.046,0.001,0.02
+Tỉnh Bình Định,0.357,0.001,0.0
+Tỉnh Cao Bằng,0.01,0.0,0.0
+Tỉnh Lâm Đồng,0.342,0.001,0.0
+Tỉnh Sơn La,0.022,0.0,0.0
+Tỉnh Lạng Sơn,0.112,0.0,0.0
+Tỉnh Điện Biên,0.021,0.0,0.0
+Tỉnh Đắk Nông,0.008,0.0,0.0
