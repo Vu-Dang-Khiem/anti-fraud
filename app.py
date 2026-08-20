@@ -258,7 +258,7 @@ with tab3:
         bien_dong = (hi - lo) / dt[c0].mean() * 100
         st.markdown(
             f"**Kết luận:** tín hiệu bất thường ở cấp đơn dao động trong khoảng "
-            f"**{lo:.1f}% – {hi:.1f}%**, biên độ chỉ {bien_dong:.0f}% quanh mức trung bình — "
+            f"**{lo*100:.1f}% – {hi*100:.1f}%**, biên độ chỉ {bien_dong:.0f}% quanh mức trung bình — "
             "**không có ngày nào đột biến**. Đây là mức nền ổn định, cho thấy gian lận diễn ra "
             "liên tục chứ không phải sự cố nhất thời."
         )
