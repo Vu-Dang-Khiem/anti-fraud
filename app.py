@@ -35,9 +35,9 @@ with tab1:
     col1.metric("Tổng đơn hàng đã phân tích", f"{n_total_orders:,}".replace(",", "."))
     col2.metric("Case bị gắn cờ nghi vấn", "9.493",
                 help="Tổng số case bị 5 rule gắn cờ (978 + 6.613 + 1.244 + 455 + 203)")
-    col3.metric("Đơn hàng liên quan", "99.969",
-                help="Đơn thuộc các case bị gắn cờ (cặp + tài xế + khách hàng, đã khử trùng) "
-                     "— chiếm 0,64% tổng số đơn")
+    col3.metric("Đơn hàng liên quan", "140.822",
+                help="Đơn thuộc các case bị 5 rule gắn cờ (cặp + tài xế + khách hàng, đã khử trùng) "
+                     "— chiếm 0,90% tổng số đơn")
 
     st.subheader("Chi tiết theo từng loại hành vi")
     breakdown = pd.DataFrame({
