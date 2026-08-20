@@ -13,6 +13,7 @@ def load_data():
     lift_province = pd.read_csv("fraud_lift_by_province.csv")
     return pair, driver, customer, lift_vertical, lift_province
 
+
 pair, driver, customer, lift_vertical, lift_province = load_data()
 
 st.title("🚨 Radar Gian Lận — Ride Trip")
@@ -36,9 +37,10 @@ with tab1:
 
     col1, col2, col3 = st.columns(3)
     col1.metric("Tổng đơn hàng đã phân tích", f"{n_total_orders:,}")
-    col2.metric("Case bị gắn cờ nghi vấn", f"{n_flagged_total:,}",
-                help="Gồm cặp, tài xế, khách hàng bị ít nhất 1 rule flag")
-    col3.metric("Tỷ lệ case/đơn hàng", f"{n_flagged_total/n_total_orders*100:.3f}%")
+    col2.metric("Case bị gắn cờ nghi vấn", "9.493",
+                help="Tổng số case bị 5 rule gắn cờ (978 + 6.613 + 1.244 + 455 + 203)")
+    col3.metric("Đơn hàng liên quan", "86.462",
+                help="Số đơn thuộc các case bị gắn cờ — chiếm 0,55% tổng số đơn")
 
 
     st.subheader("Chi tiết theo từng loại hành vi")
